@@ -6,8 +6,10 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import React, { useState } from 'react';
 import { Provider } from 'react-redux';
-
+// import NextNprogress from 'nextjs-progressbar';
 import { AppStore, createStore } from '../redux/store';
+import NextNprogress from '../components/NextNProgress';
+
 import '../public/normalize.css';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
@@ -24,6 +26,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
       <Provider store={store}>
+        <NextNprogress />
         <Component {...pageProps} />
       </Provider>
     </>

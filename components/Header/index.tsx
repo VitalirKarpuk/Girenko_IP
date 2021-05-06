@@ -66,7 +66,6 @@ export default function Header() {
   const handleBag = () => {
     bag.actions.toggleIsOpen({ isOpen: !bag.isOpen });
   };
-  console.log(bag);
 
   return (
     <div className={classes.grow}>
@@ -93,11 +92,13 @@ export default function Header() {
             />
           </div>
           <div>
-            <IconButton aria-label="show 4 new mails" color="inherit" onClick={handleBag}>
-              <Badge badgeContent={bag.bagEntriesCount} color="secondary">
-                <ShoppingCartIcon />
-              </Badge>
-            </IconButton>
+            <Link href="/checkout" as={`/checkout`}>
+              <IconButton aria-label="show 4 new mails" color="inherit" onClick={handleBag}>
+                <Badge badgeContent={bag.bagEntriesCount} color="secondary">
+                  <ShoppingCartIcon />
+                </Badge>
+              </IconButton>
+            </Link>
           </div>
         </Toolbar>
       </AppBar>

@@ -2,11 +2,12 @@ import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch, useAppSelector } from '../store';
 import * as BagStore from '../bag';
 import { PayloadAction } from '@reduxjs/toolkit';
-import { selectBagEntriesCount } from '../selectors/bag';
+import { selectBagEntriesCount, selectLineItems } from '../selectors/bag';
 
 export interface UseBagHook {
   isOpen: boolean;
   bagEntriesCount: number;
+  bagEntries: any;
   actions: {
     toggleIsOpen: (payload: BagStore.ToggleIsOpenPayload) => PayloadAction<BagStore.ToggleIsOpenPayload>;
     addToBag: (payload: BagStore.AddToBagPayload) => PayloadAction<BagStore.AddToBagPayload>;
@@ -27,9 +28,11 @@ export default function useBag(): UseBagHook {
   };
 
   const bagEntriesCount = useAppSelector(selectBagEntriesCount);
+  const bagEntries = useAppSelector(selectLineItems);
   return {
     isOpen,
     bagEntriesCount,
+    bagEntries,
     actions: {
       toggleIsOpen,
       addToBag,

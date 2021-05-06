@@ -6,8 +6,6 @@ import SliderImg from '../atoms/sliderImg';
 import style from './index.module.css';
 
 export default function DealProducts({ props }: any) {
-  console.log(props);
-
   const bag = useBag();
 
   const handleAddToBag = (item: any) => {

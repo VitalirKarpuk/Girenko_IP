@@ -1,0 +1,110 @@
+.verticalCenteredBox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background-color: rgb(214, 214, 214);
+}
+.verticalCenteredBox:after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+.verticalCenteredBox .content {
+  box-sizing: border-box;
+  animation: fadein 1s 1.5s linear forwards;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  font-size: 0;
+  opacity: 0;
+}
+
+.loaderLineMask {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50px;
+  height: 100px;
+  margin-left: -50px;
+  margin-top: -50px;
+  overflow: hidden;
+  transform-origin: 50px 50px;
+  mix-blend-mode: hard-light;
+  opacity: 0.8;
+}
+.loaderLineMask .loaderLine {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.loaderLineMask.one {
+  animation: rotate 2s infinite linear;
+}
+.loaderLineMask.one .loaderLine {
+  box-shadow: inset 0 0 0 8px #77c170;
+}
+.loaderLineMask.two {
+  animation: rotate 1.8s 0.5s infinite linear;
+}
+.loaderLineMask.two .loaderLine {
+  box-shadow: inset 0 0 0 8px #f25f5c;
+}
+.loaderLineMask.three {
+  animation: rotate 2s 1s infinite linear;
+}
+.loaderLineMask.three .loaderLine {
+  box-shadow: inset 0 0 0 8px #ffe066;
+}
+.loaderLineMask.four {
+  animation: rotate 1.8s 1.4s infinite linear;
+}
+.loaderLineMask.four .loaderLine {
+  box-shadow: inset 0 0 0 8px #247ba0;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

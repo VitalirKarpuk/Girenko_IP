@@ -11,7 +11,7 @@ export default function MenuPage() {
   const arr = [];
   if (globalProps) {
     Object.values(globalProps).forEach((element: any) => {
-      const res = element.filter((item: any) => item?.sys?.id === router.query.menu);
+      const res = Array.isArray(element) && element.filter((item: any) => item?.sys?.id === router.query.menu);
       res.length > 0 && arr.push(res[0]);
     });
   }

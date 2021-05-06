@@ -1,7 +1,9 @@
 .menuWrapper {
     width: 300px;
-    min-height: calc(100vh - 104px);
+    min-height: calc(100vh - 194px);
     padding: 10px;
     margin-right: 10px;
-    background-color: rgb(121, 77, 77);
+
+    box-shadow: rgb(33 35 38 / 10%) 34px 17px 41px -43px;
+    
 }
