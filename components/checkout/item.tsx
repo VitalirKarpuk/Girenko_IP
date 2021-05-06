@@ -26,8 +26,8 @@ export default function Item({ bagEntries }) {
       {!bagEntries.length && bagIcon ? (
         <div className={style.iconBag}>
           <img
-            src={`${bagIcon?.fields?.icon?.fields?.file?.url}`}
-            alt={`${bagIcon?.fields?.icon?.fields?.description}`}
+            src={`${bagIcon[0].fields?.icon?.fields?.file?.url}`}
+            alt={`${bagIcon[0].fields?.icon?.fields?.description}`}
           />
           <h2>В вашей корзине пока ничего нет</h2>
           <p>Перейдите в каталог и добавьте товары.</p>
