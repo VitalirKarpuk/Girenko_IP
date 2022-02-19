@@ -57,7 +57,7 @@ export default function ListProduct({ props }: any) {
                 />
                 <CardContent>
                   <Typography variant="h5" component="h2">
-                    2.20 руб/ шт.
+                    2.20 руб/шт.
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
                     {item.fields?.flowers?.fields?.description}
