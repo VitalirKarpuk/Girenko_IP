@@ -37,7 +37,6 @@ export default function Header() {
       {/* <InstagramIcon style={{ color: '#c13584' }} fontSize="large" />
       <TelegramIcon style={{ color: '#1f304e' }} fontSize="large" />
       <span className={styles.viver} /> */}
-
     </header>
   );
 }
