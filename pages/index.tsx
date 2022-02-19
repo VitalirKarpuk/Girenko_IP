@@ -8,10 +8,10 @@ import Loading from '../components/loading/Loading';
 export default function Home(props): JSX.Element {
   const { linens, pillow, plaid, towel, flowers } = props.globalProps;
   const allProducts = [...linens, ...pillow, ...plaid, ...towel, ...flowers].sort(() => Math.random() - 0.5);
-console.log(flowers);
+  console.log(flowers);
 
   return (
-    <div id ='main'>
+    <div id="main">
       <MainLoyout>{flowers ? <ListProduct props={flowers} /> : <Loading />}</MainLoyout>
     </div>
   );

@@ -7,14 +7,14 @@ import { StylesProvider } from '@material-ui/core';
 import Link from 'next/link';
 
 export default function MainLoyout({ children }: any) {
-    return (
-        <div className={styles.wrapper}>
-            <Header />
-            <section className={styles.container}>
-                <ListMenu />
-                <div className={styles.catalog}>{children}</div>
-            </section>
-            <Footer />
-        </div>
-    );
+  return (
+    <div className={styles.wrapper}>
+      <Header />
+      <section className={styles.container}>
+        <ListMenu />
+        <div className={styles.catalog}>{children}</div>
+      </section>
+      <Footer />
+    </div>
+  );
 }

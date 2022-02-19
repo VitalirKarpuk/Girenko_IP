@@ -4,7 +4,6 @@ import '../public/normalize.css';
 import '../style/variables.css';
 import '../style/global.css';
 
-
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import React, { useState } from 'react';
@@ -16,25 +15,25 @@ import NextNprogress from '../components/NextNProgress';
 import '../public/normalize.css';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-    const [store, setStore] = useState<AppStore>(null);
+  const [store, setStore] = useState<AppStore>(null);
 
-    if (!store) {
-        setStore(createStore(pageProps.globalProps));
-    }
+  if (!store) {
+    setStore(createStore(pageProps.globalProps));
+  }
 
-    return (
-        <>
-            <Head>
-                <title>Girenko</title>
-                <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-                <link type="text/css" rel="stylesheet" href={`/theme.css`} />
-            </Head>
-            <Provider store={store}>
-                <NextNprogress />
-                <Component {...pageProps} />
-            </Provider>
-        </>
-    );
+  return (
+    <>
+      <Head>
+        <title>Girenko</title>
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+        <link type="text/css" rel="stylesheet" href={`/theme.css`} />
+      </Head>
+      <Provider store={store}>
+        <NextNprogress />
+        <Component {...pageProps} />
+      </Provider>
+    </>
+  );
 }
 
 // TODO: In future version of NextJS, we will be able to use getStaticProps to populate our navigation & alertBanners

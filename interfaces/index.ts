@@ -21,9 +21,9 @@
 // // }
 
 export interface LineItem {
-    title: string;
+  title: string;
 }
 export interface bagState {
-    isOpen: boolean;
-    LineItems: LineItem[];
+  isOpen: boolean;
+  LineItems: LineItem[];
 }
