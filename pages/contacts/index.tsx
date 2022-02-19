@@ -1,13 +1,11 @@
 import React from 'react';
-import useBag from '../../redux/hooks/useBag';
-import Checkout from '../../components/checkout';
 import MainLoyout from '../../components/MainLoyout';
-import Advice from '../../components/advice';
 
 export default function ContactsPage() {
   return (
     <MainLoyout>
-      <Advice />
+      <p>Принимаем заказы по тлф.: +375293274529, +375295080632</p>
+      <p>Минский район, а.г. Колодищи, улица минская 2а</p>
     </MainLoyout>
   );
 }

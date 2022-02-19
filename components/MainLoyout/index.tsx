@@ -14,7 +14,7 @@ export default function MainLoyout({ children }: any) {
         <ListMenu />
         <div className={styles.catalog}>{children}</div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
