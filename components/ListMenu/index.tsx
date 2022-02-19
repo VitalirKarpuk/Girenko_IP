@@ -6,46 +6,33 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import TreeItem from '@material-ui/lab/TreeItem';
 import { menuList } from '../../common/constants';
-import style from './index.module.css';
+import styles from './index.module.css';
+import classNames from 'classnames';
+import { useRouter } from 'next/router';
 
-const useStyles = makeStyles({
-  root: {
-    height: 240,
-    flexGrow: 1,
-    width: 300,
-  },
-});
+
 
 export default function FileSystemNavigator() {
-  const classes = useStyles();
+    const router = useRouter();
+console.log(router);
 
-  return (
-    <div className={style.menuWrapper}>
-      <TreeView
-        className={classes.root}
-        defaultCollapseIcon={<ExpandMoreIcon />}
-        defaultExpandIcon={<ChevronRightIcon />}
-      >
-        {menuList &&
-          menuList.map((element, index) => {
-            return element.submenu ? (
-              <TreeItem nodeId={element.id} label={element.title} key={index.toString()}>
-                {element?.submenu &&
-                  element.submenu.url.map((item, index) => {
-                    return (
-                      <Link href="/[id]" as={`/${item}`} key={index.toString()}>
-                        <TreeItem nodeId={element.id + index} label={item} />
-                      </Link>
-                    );
-                  })}
-              </TreeItem>
-            ) : (
-              <Link href="/[id]" as={`/${element.url}`} key={index.toString()}>
-                <TreeItem nodeId={element.id} label={element.title}></TreeItem>
-              </Link>
-            );
-          })}
-      </TreeView>
-    </div>
-  );
+
+    const LinkStyleHome = classNames( {
+        [styles.linkActiveHome]: '/' === router.asPath,
+    });
+    const LinkStyleAdvice = classNames( {
+        [styles.linkActiveAdvice]: '/advice' === router.asPath,
+    });
+    
+    const LinkStyleContacts = classNames( {
+        [styles.linkActiveContacts]: '/contacts' === router.asPath,
+    });
+    return (
+        <div className={styles.menuWrapper}>
+            <Link href="/" as={`/`} ><span className={LinkStyleHome}>ТЮЛЬПАНЫ</span></Link>
+            <Link href="/advice" as={`/advice`}><span className={LinkStyleAdvice}>СОВЕТЫ</span></Link>
+            <Link href="/advice" as={`/contacts`}><span className={LinkStyleContacts}>КОНТАКТЫ</span></Link>
+
+        </div>
+    );
 }

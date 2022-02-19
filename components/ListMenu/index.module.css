@@ -1,9 +1,23 @@
 .menuWrapper {
-    width: 300px;
-    min-height: calc(100vh - 194px);
-    padding: 10px;
-    margin-right: 10px;
-
     box-shadow: rgb(33 35 38 / 10%) 34px 17px 41px -43px;
-    
+    background-image: linear-gradient(to right, #ffffff 0%, #51C1C6 100%);
+    color: rgba(0, 0, 0, 0.54);
+    padding: 0px 20px 0 15px;
+}
+
+.menuWrapper span {
+    cursor: pointer;
+    padding: 5px;
+    display: inline-block;
+}
+
+.linkActiveAdvice {
+    background-color: var(--col--gray4);}
+
+.linkActiveHome {
+    background-color: var(--col--gray4);
+}
+
+.linkActiveContacts {
+    background-color: var(--col--gray4);
 }

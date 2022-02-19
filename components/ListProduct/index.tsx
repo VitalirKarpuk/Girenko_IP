@@ -13,75 +13,74 @@ import useBag from '../../redux/hooks/useBag';
 import Link from 'next/link';
 
 const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      maxWidth: 345,
-    },
-    media: {
-      height: 0,
-      paddingTop: '56.25%', // 16:9
-    },
-    expand: {
-      transform: 'rotate(0deg)',
-      marginLeft: 'auto',
-      transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-      }),
-    },
-    expandOpen: {
-      transform: 'rotate(180deg)',
-    },
-    avatar: {
-      backgroundColor: red[500],
-    },
-  })
+    createStyles({
+        root: {
+            maxWidth: 345,
+            backgroundSize: 'contain'
+        },
+        media: {
+            height: 0,
+            paddingTop: '56.25%', // 16:9
+            backgroundSize: 'contain'
+
+        },
+        expand: {
+            transform: 'rotate(0deg)',
+            marginLeft: 'auto',
+            transition: theme.transitions.create('transform', {
+                duration: theme.transitions.duration.shortest,
+            }),
+        },
+        expandOpen: {
+            transform: 'rotate(180deg)',
+        },
+        avatar: {
+            backgroundColor: red[500],
+        },
+    })
 );
 
 export default function ListProduct({ props }: any) {
-  const classes = useStyles();
-  const bag = useBag();
+    const classes = useStyles();
+    const bag = useBag();
 
-  const handleAddToBag = (item: any) => {
-    bag.actions.addToBag(item);
-  };
+    const handleAddToBag = (item: any) => {
+        bag.actions.addToBag(item);
+    };
+console.log(props);
 
-  return (
-    <>
-      <div className={style.wrapper}>
-        {props &&
-          props?.map((item: any) => {
-            return (
-              <Card className={classnames(classes.root, style.card)} key={item.sys.id}>
-                <div className={style.headerCard}>
-                  <CardHeader
-                    title={item?.fields?.typeMenu?.content[0].content[0].value || ''}
-                    subheader={item?.fields?.material?.content[0].content[0].value || ''}
-                    className={style.headerTitle}
-                  />
-                </div>
-                <CardMedia
-                  className={classes.media}
-                  image={item.fields.img[0].fields.file.url}
-                  title={item.fields.img[0].fields.title}
-                />
-                <CardContent>
-                  <Typography variant="h5" component="h2">
-                    {item?.fields?.price?.content[0].content[0].value || 'не указана'}
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
-                    {item.fields.description}
-                  </Typography>
-                </CardContent>
-                <div className={style.buttons}>
-                  <Button text={'В корзину'} onClick={() => handleAddToBag(item)} />
-                  <Link href="/menu/[menu]" as={`/menu/${item.sys.id}`}>
-                    <Button text={'Подробнее'} />
-                  </Link>
-                </div>
-              </Card>
-            );
-          })}
-      </div>
-    </>
-  );
+    return (
+        <>
+            <div className={style.wrapper}>
+                {props &&
+                    props?.map((item: any) => {
+                        return (
+                            <Card className={classnames(classes.root, style.card)} >
+                                {/* <div className={style.headerCard}>
+                                    <CardHeader
+                                        title={item?.fields?.typeMenu?.content[0].content[0].value || ''}
+                                        subheader={item?.fields?.material?.content[0].content[0].value || ''}
+                                        className={style.headerTitle}
+                                    />
+                                </div> */}
+                                {/* <CardMedia
+                                    className={classes.media}
+                                    image={item.fields?.flowers.fields.file.url}
+                                    title={item.fields?.flowers.fields.title}
+                                /> */}
+                                <img className={style.image} src={item.fields?.flowers?.fields?.file?.url} alt={item.fields?.flowers?.fields?.title}/>
+                                <CardContent>
+                                    <Typography variant="h5" component="h2">
+                                    2.20 руб/ шт.
+                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary" component="p">
+                                        {item.fields?.flowers?.fields?.description}
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        );
+                    })}
+            </div>
+        </>
+    );
 }

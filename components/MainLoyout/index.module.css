@@ -1,8 +1,13 @@
+.wrapper {
+    margin: 0 auto;
+}
+
 .container {
     display: flex;
+    flex-direction: column;
     margin-top: 20px;
 }
 
 .catalog {
-    width: 100%;
+    padding: 20px;
 }

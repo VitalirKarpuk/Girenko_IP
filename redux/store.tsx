@@ -5,20 +5,20 @@ import globalPropsReducer from './globalProps';
 import bagReducer from './bag';
 
 export const rootReducer = combineReducers({
-  globalProps: globalPropsReducer,
-  bag: bagReducer,
+    globalProps: globalPropsReducer,
+    bag: bagReducer,
 });
 
 const initialState = rootReducer(undefined, { type: ' ' });
 
 export const createStore = (globalProps, _initialValue = {}) => {
-  const store = configureStore({
-    reducer: rootReducer,
-    preloadedState: { ..._initialValue, globalProps },
-    devTools: true,
-  });
+    const store = configureStore({
+        reducer: rootReducer,
+        preloadedState: { ..._initialValue, globalProps },
+        devTools: true,
+    });
 
-  return store;
+    return store;
 };
 
 export type AppStore = ReturnType<typeof createStore>;
