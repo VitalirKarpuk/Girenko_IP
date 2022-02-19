@@ -49,6 +49,14 @@
 
 
 }
+.viver {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url(./viber.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
 
 @media (max-width: 690px) {
     .logo {

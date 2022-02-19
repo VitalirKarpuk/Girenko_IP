@@ -1,7 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import useBag from '../../redux/hooks/useBag';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import TelegramIcon from '@material-ui/icons/Telegram';
 import styles from './index.module.css';
+import viber from './viber.png';
 interface IInfoAboutCustomer {
   mobile: string;
   recallMessage: string;
@@ -32,6 +34,10 @@ export default function Header() {
         <span>У нас вы можете заказать доставку или забрать в пункте самовывоза.</span>
         <span>Доставка цветов будет осуществляться 5, 6, 7, 8 и 9 марта в удобное для вас время</span>
       </div>
+      {/* <InstagramIcon style={{ color: '#c13584' }} fontSize="large" />
+      <TelegramIcon style={{ color: '#1f304e' }} fontSize="large" />
+      <span className={styles.viver} /> */}
+
     </header>
   );
 }

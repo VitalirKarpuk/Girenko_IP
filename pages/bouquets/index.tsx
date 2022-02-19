@@ -25,11 +25,6 @@ export default function СontactsPage(props) {
             return (
               <Card key={item.fields?.title} className={classnames(classes.root, style.card)}>
                 <img className={style.image} src={item.fields?.file?.url} alt={item.fields?.title} />
-                <CardContent>
-                  <Typography variant="h5" component="h2">
-                    2.5 руб/шт.
-                  </Typography>
-                </CardContent>
               </Card>
             );
           })}
