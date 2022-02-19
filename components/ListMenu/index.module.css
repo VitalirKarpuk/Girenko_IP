@@ -26,3 +26,9 @@
     background-color: var(--col--gray4);
 
 }
+
+@media (max-width: 500px) {
+    .menuWrapper span {
+        font-size: 13px;
+    }
+}

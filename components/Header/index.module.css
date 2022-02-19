@@ -27,6 +27,8 @@
     font-family: 'Righteous', serif;
     font-size: 25px;
     text-shadow: .03em .03em 0 rgb(133, 112, 182);
+    max-width: 250px;
+    text-align: center;
 }
 
 .logo:after {
@@ -46,4 +48,13 @@
     -webkit-text-fill-color: transparent;
 
 
+}
+
+@media (max-width: 690px) {
+    .logo {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 5px;
+    }
 }

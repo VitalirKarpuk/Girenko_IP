@@ -8,7 +8,7 @@ import style from './index.module.css';
 import classnames from 'classnames';
 import useBag from '../../redux/hooks/useBag';
 
-const useStyles = makeStyles((theme: Theme) =>
+export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       maxWidth: 345,
@@ -39,9 +39,6 @@ export default function ListProduct({ props }: any) {
   const classes = useStyles();
   const bag = useBag();
 
-  const handleAddToBag = (item: any) => {
-    bag.actions.addToBag(item);
-  };
 
   return (
     <>

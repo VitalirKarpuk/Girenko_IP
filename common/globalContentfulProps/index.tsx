@@ -63,17 +63,20 @@ class Contentful {
       })
       .then((data: any): any => data?.items);
   }
-  getAll(): Promise<EntryCollection<any>> {
-    return this.client.getEntries().then((data: any): any => {
-      return data;
-    });
+  getTypesBouquets(): Promise<EntryCollection<any>> {
+    return this.client
+      .getEntries({
+        content_type: 'typesBouquets',
+      })
+      .then((data: any): any => data?.items);
   }
+
 }
 
 export const getGlobalContentfulProps = async () => {
   const instance = new Contentful();
 
-  const [menu, linens, pillow, plaid, towel, bagIcon, flowers, allData]: any = await Promise.all([
+  const [menu, linens, pillow, plaid, towel, bagIcon, flowers, typesBouquets]: any = await Promise.all([
     instance.getMenu(),
     instance.getLinens(),
     instance.getPillow(),
@@ -81,7 +84,7 @@ export const getGlobalContentfulProps = async () => {
     instance.getTowel(),
     instance.getBagIcon(),
     instance.getFlowers(),
-    instance.getAll(),
+    instance.getTypesBouquets(),
   ]);
-  return { menu, linens, pillow, plaid, towel, bagIcon, flowers, allData };
+  return { menu, linens, pillow, plaid, towel, bagIcon, flowers, typesBouquets };
 };
