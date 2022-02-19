@@ -12,7 +12,6 @@ import { useRouter } from 'next/router';
 
 export default function FileSystemNavigator() {
   const router = useRouter();
-  console.log(router);
 
   const LinkStyleHome = classNames({
     [styles.linkActiveHome]: '/' === router.asPath,
@@ -32,7 +31,7 @@ export default function FileSystemNavigator() {
       <Link href="/advice" as={`/advice`}>
         <span className={LinkStyleAdvice}>СОВЕТЫ</span>
       </Link>
-      <Link href="/advice" as={`/contacts`}>
+      <Link href="/contacts" as={`/contacts`}>
         <span className={LinkStyleContacts}>КОНТАКТЫ</span>
       </Link>
     </div>

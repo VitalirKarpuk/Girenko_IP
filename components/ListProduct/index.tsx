@@ -42,7 +42,6 @@ export default function ListProduct({ props }: any) {
   const handleAddToBag = (item: any) => {
     bag.actions.addToBag(item);
   };
-  console.log(props);
 
   return (
     <>

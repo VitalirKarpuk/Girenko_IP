@@ -9,7 +9,6 @@ export default function MenuPage() {
   const router = useRouter();
   const globalProps = useGlobalProps();
   const arr = [];
-  console.log(router.query.menu);
   if (globalProps) {
     Object.values(globalProps).forEach((element: any) => {
       const res = Array.isArray(element) && element.filter((item: any) => item?.sys?.id === router.query.menu);

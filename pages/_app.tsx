@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
       <Head>
-        <title>Girenko</title>
+        <title>bouquets</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
         <link type="text/css" rel="stylesheet" href={`/theme.css`} />
       </Head>

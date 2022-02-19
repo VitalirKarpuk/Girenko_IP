@@ -11,7 +11,6 @@ import { getGlobalContentfulProps } from '../common/globalContentfulProps';
 export default function MenuPage() {
   const router = useRouter();
   const globalProps = useGlobalProps();
-  console.log(globalProps[`${router.query.id}`]);
 
   return (
     <MainLoyout>

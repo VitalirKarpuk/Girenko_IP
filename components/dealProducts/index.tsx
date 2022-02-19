@@ -6,7 +6,6 @@ import style from './index.module.css';
 
 export default function DealProducts({ props }: any) {
   const bag = useBag();
-  console.log(props);
   const { name, price, size, material, color, description } = props[0]?.fields;
 
   return (

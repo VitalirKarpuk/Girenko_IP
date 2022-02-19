@@ -30,10 +30,6 @@ const bagSlice = createSlice({
     },
     addToBag: (state, action: PayloadAction<AddToBagPayload>): BagState => {
       const { payload } = action;
-      console.log({
-        ...payload,
-      });
-
       state.LineItems.push({
         ...payload,
       });
