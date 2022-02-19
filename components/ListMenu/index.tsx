@@ -23,6 +23,10 @@ export default function FileSystemNavigator() {
   const LinkStyleContacts = classNames({
     [styles.linkActiveContacts]: '/contacts' === router.asPath,
   });
+
+  const LinkStyleBouquets = classNames({
+    [styles.linkActiveBouquets]: '/bouquets' === router.asPath,
+  });
   return (
     <div className={styles.menuWrapper}>
       <Link href="/" as={`/`}>
@@ -30,6 +34,9 @@ export default function FileSystemNavigator() {
       </Link>
       <Link href="/advice" as={`/advice`}>
         <span className={LinkStyleAdvice}>СОВЕТЫ</span>
+      </Link>
+      <Link href="/bouquets" as={`/bouquets`}>
+        <span className={LinkStyleBouquets}>БУКЕТЫ</span>
       </Link>
       <Link href="/contacts" as={`/contacts`}>
         <span className={LinkStyleContacts}>КОНТАКТЫ</span>

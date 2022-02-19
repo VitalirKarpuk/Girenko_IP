@@ -21,3 +21,8 @@
 .linkActiveContacts {
     background-color: var(--col--gray4);
 }
+
+.linkActiveBouquets{
+    background-color: var(--col--gray4);
+
+}
