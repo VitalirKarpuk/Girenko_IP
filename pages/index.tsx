@@ -6,8 +6,7 @@ import ListProduct from '../components/ListProduct';
 import Loading from '../components/loading/Loading';
 
 export default function Home(props): JSX.Element {
-
-  const {flowers } = props.globalProps;
+  const { flowers } = props.globalProps;
   return (
     <div id="main">
       <MainLoyout>{flowers ? <ListProduct props={flowers} /> : <Loading />}</MainLoyout>

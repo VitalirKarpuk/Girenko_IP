@@ -39,7 +39,6 @@ export default function ListProduct({ props }: any) {
   const classes = useStyles();
   const bag = useBag();
 
-
   return (
     <>
       <div className={style.wrapper}>

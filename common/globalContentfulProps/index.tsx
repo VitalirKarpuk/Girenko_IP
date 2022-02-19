@@ -70,7 +70,6 @@ class Contentful {
       })
       .then((data: any): any => data?.items);
   }
-
 }
 
 export const getGlobalContentfulProps = async () => {
