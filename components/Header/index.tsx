@@ -36,7 +36,7 @@ export default function Header() {
         <span>Доставка цветов будет осуществляться 5, 6, 7, 8 и 9 марта в удобное для вас время</span>
         <div className={styles.socialIcons}>
           {/* <InstagramIcon className={styles.iconHover} style={{ color: '#c13584' }} fontSize="large" /> */}
-          <a href="tg://resolve?domain=VitalikKarpuk">
+          <a href="tg://resolve?domain=yarik1101">
             <TelegramIcon className={styles.iconHover} style={{ color: '#0088cc' }} fontSize="large" />
           </a>
           <a href="https://api.whatsapp.com/send/?phone=375295080632">
